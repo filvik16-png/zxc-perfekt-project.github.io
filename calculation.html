@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расчёты - Расчёт и диагностика трансформаторов</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Шапка и навигация -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>▰ Трансформаторы</h1>
+                    <p class="subtitle">Расчёт и диагностика</p>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="theory.html">Теория</a></li>
+                    <li><a href="calculation.html" class="active">Расчёты</a></li>
+                    <li><a href="losses.html">Потери и КПД</a></li>
+                    <li><a href="diagnostics.html">Диагностика</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2 class="page-title">Интерактивные калькуляторы</h2>
+            <p class="page-description">Используйте калькуляторы ниже для практических расчётов параметров трансформаторов.</p>
+
+            <div class="calculators-grid">
+                <div class="calculator-card">
+                    <h3>Калькулятор 1: Коэффициент трансформации</h3>
+                    <div class="calculator-body">
+                        <div class="input-group">
+                            <label for="k-u1">Напряжение первичной обмотки U₁ (В):</label>
+                            <input type="number" id="k-u1" placeholder="10000" step="0.01">
+                        </div>
+                        <div class="input-group">
+                            <label for="k-u2">Напряжение вторичной обмотки U₂ (В):</label>
+                            <input type="number" id="k-u2" placeholder="400" step="0.01">
+                        </div>
+                        <div class="input-group">
+                            <label for="k-n1">Число витков первичной обмотки N₁ (опционально):</label>
+                            <input type="number" id="k-n1" placeholder="5000">
+                        </div>
+                        <button class="btn btn-primary" onclick="calculateK()">Рассчитать</button>
+                        <div class="result-box" id="k-result" style="display: none;">
+                            <h4>Результаты:</h4>
+                            <p><strong>Коэффициент трансформации:</strong> K = <span id="k-value">0</span></p>
+                            <p id="n2-result" style="display: none;"><strong>Число витков вторичной обмотки:</strong> N₂ = <span id="n2-value">0</span></p>
+                        </div>
+                        <div class="formula-box">
+                            <p><strong>Формула:</strong> K = U₁ / U₂ = N₁ / N₂</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calculator-card">
+                    <h3>Калькулятор 2: Мощность и потери в меди</h3>
+                    <div class="calculator-body">
+                        <div class="input-group">
+                            <label for="p-i2">Ток нагрузки I₂ (А):</label>
+                            <input type="number" id="p-i2" placeholder="100" step="0.1">
+                        </div>
+                        <div class="input-group">
+                            <label for="p-u2">Напряжение вторичной обмотки U₂ (В):</label>
+                            <input type="number" id="p-u2" placeholder="400" step="0.01">
+                        </div>
+                        <div class="input-group">
+                            <label for="p-r">Сопротивление обмотки R (Ом):</label>
+                            <input type="number" id="p-r" placeholder="0.05" step="0.001">
+                        </div>
+                        <button class="btn btn-primary" onclick="calculatePower()">Рассчитать</button>
+                        <div class="result-box" id="p-result" style="display: none;">
+                            <h4>Результаты:</h4>
+                            <p><strong>Мощность нагрузки:</strong> P₂ = <span id="p2-value">0</span> Вт</p>
+                            <p><strong>Потери в меди:</strong> P_м = <span id="pm-value">0</span> Вт</p>
+                        </div>
+                        <div class="formula-box">
+                            <p><strong>Формулы:</strong></p>
+                            <p>P₂ = U₂ · I₂</p>
+                            <p>P_м = I₂² · R</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calculator-card">
+                    <h3>Калькулятор 3: КПД трансформатора</h3>
+                    <div class="calculator-body">
+                        <div class="input-group">
+                            <label for="e-p2">Мощность нагрузки P₂ (Вт):</label>
+                            <input type="number" id="e-p2" placeholder="40000" step="1">
+                        </div>
+                        <div class="input-group">
+                            <label for="e-pst">Потери в стали P_ст (Вт):</label>
+                            <input type="number" id="e-pst" placeholder="500" step="1">
+                        </div>
+                        <div class="input-group">
+                            <label for="e-pm">Потери в меди P_м (Вт):</label>
+                            <input type="number" id="e-pm" placeholder="500" step="1">
+                        </div>
+                        <button class="btn btn-primary" onclick="calculateEfficiency()">Рассчитать КПД</button>
+                        <div class="result-box" id="e-result" style="display: none;">
+                            <h4>Результаты:</h4>
+                            <p><strong>КПД трансформатора:</strong> η = <span id="eta-value">0</span> %</p>
+                            <div id="eta-indicator" class="efficiency-indicator"></div>
+                        </div>
+                        <div class="formula-box">
+                            <p><strong>Формула:</strong> η = P₂ / (P₂ + P_ст + P_м) · 100%</p>
+                            <p style="margin-top: 10px; font-size: 0.9em;">η > 95% — высокий КПД | η > 85% — средний КПД | η ≤ 85% — низкий КПД</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-nav">
+                <a href="losses.html" class="btn btn-primary">Перейти к расчёту потерь →</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Учебное пособие "Расчёт и диагностика трансформаторов"</p>
+            <p>Для студентов электротехнических специальностей</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

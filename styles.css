@@ -1,0 +1,706 @@
+/* ===== ОБЩИЕ СТИЛИ ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #111;
+    background-color: #f2f2f2;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== НАВИГАЦИЯ (HEADER) ===== */
+header {
+    background: #111;
+    color: white;
+    padding: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+
+.navbar {
+    padding: 1rem 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    flex: 1;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.2rem;
+    font-weight: 700;
+}
+
+.logo .subtitle {
+    font-size: 0.9rem;
+    opacity: 0.85;
+    font-weight: 300;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    flex: 2;
+    justify-content: flex-end;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.nav-menu a.active {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-bottom: 2px solid white;
+}
+
+/* ===== ОСНОВНОЙ КОНТЕНТ ===== */
+main {
+    min-height: calc(100vh - 250px);
+    padding: 3rem 0;
+}
+
+/* ===== ГЛАВНАЯ СТРАНИЦА (INDEX) ===== */
+.hero {
+    background: #111;
+    color: white;
+    padding: 4rem 0;
+    margin-bottom: 3rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* ===== КАРТОЧКИ ===== */
+.sections {
+    margin: 3rem 0;
+}
+
+.sections h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #111;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border-top: 4px solid #111;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #111;
+}
+
+.card p {
+    color: #555;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+/* ===== КНОПКИ ===== */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: #111;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #333;
+    transform: scale(1.03);
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+/* ===== ТЕОРИЯ (БОКОВОЕ МЕНЮ) ===== */
+.theory-layout {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+}
+
+.sidebar {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+}
+
+.sidebar h3 {
+    margin-bottom: 1rem;
+    color: #111;
+    font-size: 1.1rem;
+}
+
+.sidebar-menu {
+    list-style: none;
+}
+
+.sidebar-menu li {
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-menu a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #444;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-menu a:hover {
+    background-color: #f2f2f2;
+    color: #111;
+    border-left-color: #111;
+    padding-left: 1.2rem;
+}
+
+/* ===== КОНТЕНТ ТЕОРИИ ===== */
+.theory-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.theory-section {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.theory-section:last-child {
+    border-bottom: none;
+}
+
+.theory-section h2 {
+    font-size: 1.8rem;
+    color: #111;
+    margin-bottom: 1rem;
+}
+
+.theory-section h3 {
+    font-size: 1.3rem;
+    color: #111;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.theory-section h4 {
+    font-size: 1.1rem;
+    color: #333;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.theory-section p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.theory-section ul, .theory-section ol {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.theory-section li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+/* ===== ИНФОРМАЦИОННЫЕ БЛОКИ ===== */
+.info-box {
+    background: #f7f7f7;
+    border-left: 4px solid #111;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 5px;
+}
+
+.info-box strong {
+    color: #111;
+}
+
+.info-box ul {
+    margin-left: 1.5rem;
+}
+
+/* ===== ФОРМУЛЫ ===== */
+.formula-box {
+    background: #fafafa;
+    border: 2px solid #999;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.formula-box p {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    font-family: 'Courier New', monospace;
+    font-weight: 500;
+    color: #111;
+}
+
+.formula-box ul {
+    text-align: left;
+    margin: 1rem 2rem 0;
+}
+
+/* ===== ИЛЛЮСТРАЦИИ-ЗАГЛУШКИ ===== */
+.illustration {
+    background: #f4f4f4;
+    border: 2px dashed #bbb;
+    border-radius: 8px;
+    padding: 3rem 1rem;
+    text-align: center;
+    color: #777;
+    margin: 2rem 0;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.diagram-box {
+    background: #fff;
+    border: 1px solid #111;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1.5rem 0;
+}
+
+.diagram-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.diagram-svg rect,
+.diagram-svg line,
+.diagram-svg polyline,
+.diagram-svg path {
+    stroke: #111;
+    fill: none;
+    stroke-width: 2;
+}
+
+.diagram-svg text {
+    fill: #111;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 13px;
+}
+
+.diagram-graph {
+    background: #fff;
+    border: 1px solid #111;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1.5rem 0;
+}
+
+.diagram-graph svg {
+    width: 100%;
+    height: auto;
+}
+
+/* ===== КАЛЬКУЛЯТОРЫ ===== */
+.page-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #111;
+    margin-bottom: 0.5rem;
+}
+
+.page-description {
+    text-align: center;
+    color: #444;
+    margin-bottom: 2rem;
+}
+
+.calculators-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.calculator-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-top: 4px solid #111;
+}
+
+.calculator-card h3 {
+    font-size: 1.3rem;
+    color: #111;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.calculator-body {
+    padding: 1rem 0;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #111;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #111;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== РЕЗУЛЬТАТЫ ===== */
+.result-box {
+    background: #f7f7f7;
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.result-box h4 {
+    color: #111;
+    margin-bottom: 1rem;
+}
+
+.result-box p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #111;
+}
+
+.result-box strong {
+    color: #111;
+}
+
+/* ===== ИНДИКАТОР КПД ===== */
+.efficiency-indicator {
+    width: 100%;
+    height: 30px;
+    background: #ddd;
+    border-radius: 15px;
+    margin: 1rem 0;
+    overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.efficiency-indicator.excellent {
+    background: #111;
+}
+
+.efficiency-indicator.good {
+    background: #555;
+}
+
+.efficiency-indicator.poor {
+    background: #999;
+}
+
+/* ===== СТАТУС БОК ===== */
+.status-box {
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 1rem 0;
+    text-align: center;
+    font-weight: 500;
+}
+
+.status-excellent {
+    background: #e6e6e6;
+    color: #111;
+    border: 1px solid #111;
+}
+
+.status-good {
+    background: #fafafa;
+    color: #444;
+    border: 1px solid #444;
+}
+
+.status-warning {
+    background: #f2f2f2;
+    color: #666;
+    border: 1px solid #666;
+}
+
+/* ===== ТАБЛИЦЫ ===== */
+.table-wrapper {
+    overflow-x: auto;
+    margin: 2rem 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+table thead {
+    background: #111;
+    color: white;
+}
+
+table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+table td {
+    padding: 1rem;
+    border-bottom: 1px solid #e4e4e4;
+    color: #333;
+}
+
+table tr:hover {
+    background: #f2f2f2;
+}
+
+table tr:nth-child(even) {
+    background: #fafafa;
+}
+
+.losses-table, .diagnostic-table {
+    width: 100%;
+}
+
+/* ===== РАЗДЕЛЫ НАВИГАЦИИ ===== */
+.section-nav {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid #e4e4e4;
+}
+
+.section-nav .btn {
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+}
+
+/* ===== МЕТОДЫ ДИАГНОСТИКИ ===== */
+.diagnostic-method {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-left: 4px solid #111;
+}
+
+.diagnostic-method h4 {
+    color: #111;
+    margin-bottom: 1rem;
+}
+
+/* ===== ФУТЕР ===== */
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+footer .container {
+    padding: 1rem 0;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+}
+
+footer p:first-child {
+    font-weight: 600;
+}
+
+/* ===== АДАПТИВНЫЙ ДИЗАЙН ===== */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 0.5rem;
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .nav-menu a {
+        padding: 0.5rem 0;
+    }
+
+    .theory-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: relative;
+        top: auto;
+    }
+
+    .cards-grid, .calculators-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .page-title {
+        font-size: 1.5rem;
+    }
+
+    .theory-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .calculator-card {
+        padding: 1.5rem;
+    }
+
+    table {
+        font-size: 0.85rem;
+    }
+
+    table th, table td {
+        padding: 0.75rem 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 1.3rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    .card h3, .calculator-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .formula-box p {
+        font-size: 0.95rem;
+    }
+}
+
+/* ===== АНИМАЦИИ ===== */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card, .calculator-card, .theory-section {
+    animation: slideIn 0.5s ease-out;
+}

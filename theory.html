@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Теория - Расчёт и диагностика трансформаторов</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Шапка и навигация -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>▰ Трансформаторы</h1>
+                    <p class="subtitle">Расчёт и диагностика</p>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="theory.html" class="active">Теория</a></li>
+                    <li><a href="calculation.html">Расчёты</a></li>
+                    <li><a href="losses.html">Потери и КПД</a></li>
+                    <li><a href="diagnostics.html">Диагностика</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="theory-layout">
+                <!-- Боковое меню (Sidebar) -->
+                <aside class="sidebar">
+                    <h3>Содержание</h3>
+                    <ul class="sidebar-menu">
+                        <li><a href="#basics">Основы трансформаторов</a></li>
+                        <li><a href="#types">Виды и конструкции</a></li>
+                        <li><a href="#principles">Принцип работы</a></li>
+                        <li><a href="#circuits">Схемы замещения</a></li>
+                    </ul>
+                </aside>
+
+                <!-- Основной контент -->
+                <section class="theory-content">
+                    <!-- Раздел 1: Основы -->
+                    <section id="basics" class="theory-section">
+                        <h2>Основы трансформаторов</h2>
+                        
+                        <h3>Определение и назначение</h3>
+                        <p>Трансформатор — это статическое электромагнитное устройство, предназначенное для преобразования переменного тока одного напряжения в переменный ток другого напряжения с помощью электромагнитной индукции. Трансформаторы широко используются в системах генерирования, передачи, распределения и использования электроэнергии.</p>
+
+                        <h3>Классификация трансформаторов</h3>
+                        <div class="info-box">
+                            <strong>По напряжению:</strong>
+                            <ul>
+                                <li><strong>Низкого напряжения (НН):</strong> до 1 кВ</li>
+                                <li><strong>Среднего напряжения (СН):</strong> от 1 кВ до 35 кВ</li>
+                                <li><strong>Высокого напряжения (ВН):</strong> от 35 кВ до 220 кВ</li>
+                                <li><strong>Сверхвысокого напряжения (СВН):</strong> выше 220 кВ</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box">
+                            <strong>По мощности:</strong>
+                            <ul>
+                                <li><strong>Малой мощности:</strong> до 100 кВА</li>
+                                <li><strong>Средней мощности:</strong> от 100 до 1000 кВА</li>
+                                <li><strong>Большой мощности:</strong> свыше 1000 кВА</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box">
+                            <strong>По числу фаз:</strong>
+                            <ul>
+                                <li><strong>Однофазные:</strong> 1 фаза (фаза - нейтраль)</li>
+                                <li><strong>Трёхфазные:</strong> 3 фазы переменного тока</li>
+                            </ul>
+                        </div>
+
+                        <div class="diagram-box">
+                            <svg viewBox="0 0 640 260" class="diagram-svg" aria-label="Схема классификации трансформаторов">
+                                <rect x="220" y="12" width="200" height="46" rx="10" ry="10"/>
+                                <text x="320" y="40" text-anchor="middle">Трансформаторы</text>
+                                <line x1="320" y1="58" x2="170" y2="110"/>
+                                <line x1="320" y1="58" x2="320" y2="110"/>
+                                <line x1="320" y1="58" x2="470" y2="110"/>
+                                <rect x="70" y="110" width="160" height="54" rx="10" ry="10"/>
+                                <text x="150" y="136" text-anchor="middle">Силовые</text>
+                                <text x="150" y="154" text-anchor="middle">масляные, сухие</text>
+                                <rect x="240" y="110" width="160" height="54" rx="10" ry="10"/>
+                                <text x="320" y="136" text-anchor="middle">Измерительные</text>
+                                <text x="320" y="154" text-anchor="middle">ТТ, ТН</text>
+                                <rect x="410" y="110" width="180" height="54" rx="10" ry="10"/>
+                                <text x="500" y="136" text-anchor="middle">Специальные</text>
+                                <text x="500" y="154" text-anchor="middle">автотрансф., свароч.</text>
+                            </svg>
+                        </div>
+                    </section>
+
+                    <!-- Раздел 2: Виды и конструкции -->
+                    <section id="types" class="theory-section">
+                        <h2>Виды и конструкции</h2>
+
+                        <h3>Основные типы трансформаторов</h3>
+
+                        <div class="info-box">
+                            <strong>Силовые трансформаторы:</strong>
+                            <ul>
+                                <li><strong>Масляные:</strong> охлаждаются масло-воздушной системой, используются в мощных установках (подстанциях, ГЭС, ТЭС)</li>
+                                <li><strong>Сухие:</strong> охлаждаются воздухом, используются внутри помещений, безопаснее масляных</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box">
+                            <strong>Измерительные трансформаторы:</strong>
+                            <ul>
+                                <li><strong>ТТ (трансформаторы тока):</strong> служат для измерения и защиты цепей, преобразуют ток высокого напряжения в ток низкого напряжения</li>
+                                <li><strong>ТН (трансформаторы напряжения):</strong> преобразуют напряжение высокого напряжения в стандартное напряжение 100 или 110 В</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box">
+                            <strong>Специальные трансформаторы:</strong>
+                            <ul>
+                                <li><strong>Автотрансформаторы:</strong> часть обмотки участвует одновременно в первичной и вторичной цепях</li>
+                                <li><strong>Сварочные трансформаторы:</strong> для получения низкого напряжения и больших токов (в сварочных аппаратах)</li>
+                            </ul>
+                        </div>
+
+                        <h3>Устройство трансформатора</h3>
+                        <div class="info-box">
+                            <strong>Основные элементы:</strong>
+                            <ul>
+                                <li><strong>Магнитопровод (сердечник):</strong> набор тонких пластин из электротехнической стали, ламинированных для снижения вихревых токов. Служит для проведения магнитного потока между обмотками.</li>
+                                <li><strong>Первичная обмотка:</strong> подключается к сети с переменным напряжением</li>
+                                <li><strong>Вторичная обмотка:</strong> на которой индуцируется выходное напряжение</li>
+                                <li><strong>Бак:</strong> стальной корпус, содержащий активную часть (магнитопровод и обмотки) и масло (для масляных трансформаторов)</li>
+                                <li><strong>Расширитель (расширительный бак):</strong> служит для компенсации расширения масла при нагреве</li>
+                                <li><strong>Вводы (гирлянды):</strong> выводы обмоток через изоляторы для подключения внешних цепей</li>
+                                <li><strong>Охлаждение:</strong> система радиаторов или кулеров для отвода тепла</li>
+                            </ul>
+                        </div>
+
+                        <div class="diagram-box">
+                            <svg viewBox="0 0 640 220" class="diagram-svg" aria-label="Схема устройства трансформатора">
+                                <rect x="70" y="60" width="110" height="100" rx="14" ry="14"/>
+                                <text x="125" y="95" text-anchor="middle">Первичная</text>
+                                <text x="125" y="115" text-anchor="middle">обмотка</text>
+                                <rect x="240" y="50" width="160" height="120" rx="14" ry="14"/>
+                                <text x="320" y="100" text-anchor="middle">Магнитопровод</text>
+                                <rect x="460" y="60" width="110" height="100" rx="14" ry="14"/>
+                                <text x="515" y="95" text-anchor="middle">Вторичная</text>
+                                <text x="515" y="115" text-anchor="middle">обмотка</text>
+                                <line x1="180" y1="110" x2="240" y2="110"/>
+                                <line x1="400" y1="110" x2="460" y2="110"/>
+                                <text x="60" y="40">Ввод U₁</text>
+                                <text x="580" y="40">Вывод U₂</text>
+                            </svg>
+                        </div>
+                    </section>
+
+                    <!-- Раздел 3: Принцип работы -->
+                    <section id="principles" class="theory-section">
+                        <h2>Принцип работы</h2>
+
+                        <h3>Закон электромагнитной индукции Фарадея</h3>
+                        <p>При изменении магнитного потока, проходящего через витки обмотки, в этой обмотке индуцируется ЭДС:</p>
+                        <div class="formula-box">
+                            <p><strong>E = -dΦ/dt</strong></p>
+                            <p>или для синусоидального магнитного потока:</p>
+                            <p><strong>E = 4.44 · f · N · Φ<sub>m</sub></strong></p>
+                        </div>
+                        <p>где:</p>
+                        <ul>
+                            <li>f — частота переменного тока (Гц)</li>
+                            <li>N — число витков обмотки</li>
+                            <li>Φ<sub>m</sub> — амплитуда магнитного потока (Вб)</li>
+                            <li>4.44 = 2√2 · π / 2</li>
+                        </ul>
+
+                        <h3>Коэффициент трансформации</h3>
+                        <p>Для идеального трансформатора без потерь:</p>
+                        <div class="formula-box">
+                            <p><strong>K = U₁/U₂ = N₁/N₂ = I₂/I₁</strong></p>
+                        </div>
+                        <p>где:</p>
+                        <ul>
+                            <li>U₁, U₂ — напряжения первичной и вторичной обмоток (В)</li>
+                            <li>N₁, N₂ — число витков первичной и вторичной обмоток</li>
+                            <li>I₁, I₂ — токи первичной и вторичной обмоток (А)</li>
+                        </ul>
+
+                        <h3>Режимы работы трансформатора</h3>
+                        <div class="info-box">
+                            <strong>Режим холостого хода:</strong> вторичная обмотка разомкнута, первичная обмотка подключена к сети. Ток холостого хода I₀ расходуется только на создание магнитного потока и покрытие потерь в стали.
+                        </div>
+
+                        <div class="info-box">
+                            <strong>Режим короткого замыкания:</strong> вторичная обмотка закорочена (U₂ = 0), первичная обмотка подключена к сети с пониженным напряжением. Ток КЗ в несколько раз превышает номинальный, выделяется большая тепловая мощность.
+                        </div>
+
+                        <div class="info-box">
+                            <strong>Номинальный режим:</strong> трансформатор работает при номинальных значениях напряжений, токов и мощности. Это режим, на который рассчитана нормальная работа.
+                        </div>
+
+                        <div class="diagram-box">
+                            <svg viewBox="0 0 640 220" class="diagram-svg" aria-label="Схема работы трансформатора">
+                                <rect x="50" y="60" width="110" height="100" rx="14" ry="14"/>
+                                <text x="105" y="95" text-anchor="middle">Первичная</text>
+                                <text x="105" y="115" text-anchor="middle">обмотка</text>
+                                <rect x="240" y="60" width="160" height="100" rx="14" ry="14"/>
+                                <text x="320" y="90" text-anchor="middle">Магнитный</text>
+                                <text x="320" y="110" text-anchor="middle">поток Φ</text>
+                                <rect x="450" y="60" width="110" height="100" rx="14" ry="14"/>
+                                <text x="505" y="95" text-anchor="middle">Вторичная</text>
+                                <text x="505" y="115" text-anchor="middle">обмотка</text>
+                                <line x1="160" y1="110" x2="240" y2="110"/>
+                                <line x1="400" y1="110" x2="450" y2="110"/>
+                            </svg>
+                        </div>
+                    </section>
+
+                    <!-- Раздел 4: Схемы замещения -->
+                    <section id="circuits" class="theory-section">
+                        <h2>Схемы замещения</h2>
+
+                        <p>Схема замещения — это эквивалентная электрическая схема, которая приближённо воспроизводит электрические свойства трансформатора.</p>
+
+                        <h3>Т-образная схема замещения (полная)</h3>
+                        <p>Используется для наиболее точных расчётов. Включает:</p>
+                        <ul>
+                            <li><strong>R₁, L₁:</strong> сопротивление и индуктивность рассеяния первичной обмотки</li>
+                            <li><strong>R₂, L₂:</strong> сопротивление и индуктивность рассеяния вторичной обмотки</li>
+                            <li><strong>R_м:</strong> сопротивление, обусловленное потерями в стали (гистерезис и вихревые токи)</li>
+                            <li><strong>L_м:</strong> индуктивность намагничивания (реактивное сопротивление)</li>
+                        </ul>
+
+                        <div class="diagram-box">
+                            <svg viewBox="0 0 640 220" class="diagram-svg" aria-label="Т-образная схема замещения">
+                                <text x="40" y="32">U₁</text>
+                                <line x1="70" y1="30" x2="160" y2="30"/>
+                                <rect x="160" y="15" width="60" height="30" rx="6" ry="6"/>
+                                <text x="190" y="35" text-anchor="middle">R₁</text>
+                                <line x1="220" y1="30" x2="290" y2="30"/>
+                                <rect x="290" y="15" width="60" height="30" rx="6" ry="6"/>
+                                <text x="320" y="35" text-anchor="middle">L₁</text>
+                                <line x1="350" y1="30" x2="450" y2="30"/>
+                                <rect x="450" y="15" width="60" height="30" rx="6" ry="6"/>
+                                <text x="480" y="35" text-anchor="middle">R₂</text>
+                                <line x1="510" y1="30" x2="580" y2="30"/>
+                                <text x="610" y="32">U₂</text>
+                                <line x1="320" y1="45" x2="320" y2="110"/>
+                                <rect x="260" y="110" width="120" height="40" rx="6" ry="6"/>
+                                <text x="320" y="135" text-anchor="middle">Rₘ</text>
+                                <line x1="320" y1="150" x2="320" y2="180"/>
+                                <rect x="260" y="180" width="120" height="20" rx="6" ry="6"/>
+                                <text x="320" y="195" text-anchor="middle">Lₘ</text>
+                            </svg>
+                        </div>
+
+                        <h3>Г-образная схема замещения (упрощённая)</h3>
+                        <p>Используется для инженерных расчётов, когда требуемая точность не очень высока. Параметры ветви намагничивания переносятся в начало схемы (R_м и L_м).</p>
+
+                        <div class="diagram-box">
+                            <svg viewBox="0 0 790 220" class="diagram-svg" aria-label="Г-образная схема замещения">
+                                <text x="30" y="72">U₁</text>
+                                <line x1="60" y1="70" x2="150" y2="70"/>
+                                <rect x="150" y="55" width="60" height="30" rx="6" ry="6"/>
+                                <text x="180" y="75" text-anchor="middle">R₁</text>
+                                <line x1="210" y1="70" x2="280" y2="70"/>
+                                <rect x="280" y="55" width="60" height="30" rx="6" ry="6"/>
+                                <text x="310" y="75" text-anchor="middle">L₁</text>
+                                <line x1="340" y1="70" x2="420" y2="70"/>
+                                <rect x="420" y="55" width="110" height="30" rx="6" ry="6"/>
+                                <text x="475" y="75" text-anchor="middle">Rₘ + Lₘ</text>
+                                <line x1="530" y1="70" x2="565" y2="70"/>
+                                <rect x="565" y="55" width="60" height="30" rx="6" ry="6"/>
+                                <text x="595" y="75" text-anchor="middle">R₂/L₂</text>
+                                <line x1="625" y1="70" x2="730" y2="70"/>
+                                <text x="760" y="72">U₂</text>
+                            </svg>
+                        </div>
+
+                        <h3>Параметры ветви намагничивания</h3>
+                        <div class="info-box">
+                            <p><strong>Индуктивное сопротивление:</strong></p>
+                            <p>X_м = E₀/I₀</p>
+                            <p><strong>Активное сопротивление (потери в стали):</strong></p>
+                            <p>R_м = E₀ · cos(φ₀) / I₀</p>
+                            <p>где E₀ — ЭДС при холостом ходе, I₀ — ток холостого хода, φ₀ — угол сдвига между ними.</p>
+                        </div>
+                    </section>
+
+                    <!-- Кнопка переходу -->
+                    <div class="section-nav">
+                        <a href="calculation.html" class="btn btn-primary">Перейти к расчётам →</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Учебное пособие "Расчёт и диагностика трансформаторов"</p>
+            <p>Для студентов электротехнических специальностей</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
